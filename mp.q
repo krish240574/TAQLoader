@@ -8,6 +8,6 @@ rd:.Q.fc[{(colStr;enlist"|")0:x}]
 
 
 /.Q.fpn[{select date:distinct`date$Time by Symbol from rd x};`:out;55000000] 
-wr:{show z;show y`part;show y`date;show select from x where part=(y`part),date="D"$("/" vs string z)3}
-foo:{ x:update part:gp Symbol,date:`date$Time from rd x; t:select distinct date by part from x;{p:` sv 'dirs[y`part],/:(`$string raze y`date),\:`QUOTE,`;wr[x;y]each p;}[x]each 0!t}
+wr:{show z;show y;show select from x where part=y,date="D"$("/" vs string z)3}
+foo:{x:update part:gp Symbol,date:`date$Time from rd x; t:select distinct date by part from x;{p:` sv 'dirs[y`part],/:(`$string raze y`date),\:`QUOTE,`;wr[x;y`part]each p;}[x]each 0!t}
 .Q.fpn[foo;`:out;55000000] 

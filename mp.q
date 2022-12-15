@@ -18,6 +18,6 @@ wr:{show y;pth[z] set .Q.en[pth[z]] gd[x;y;z]}
 foo:{x:update part:gp Symbol,date:`date$Time from rd x;t:select distinct date by part from x;
  {p:fpth[y];wr[x;y`part]each p;}[x]each 0!t}
 
-/ tt is the entier data file(TAQ BB or Trades file with the column name row removed
+/ tt is the entire data file(TAQ BB or Trades file with the column name row removed
 / tail -(wc -l)-1 <File> > tt
 .Q.fpn[foo;`:tt;55000000] 
